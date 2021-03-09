@@ -46,14 +46,22 @@ console.log(findModulus(4, 10))
 // Create a JavaScript function that accepts a certain amount of numbers as parameters. Those numbers should be collected using a prompt and the numbers should be delimited by commas. Once the values are collected, find the sum of all of the numbers combined. You will need to use a function, loop, arguments object, and several type conversion global functions to accomplish this task.
 
 
-let num1 = parseInt(prompt("Enter the first number"))
-let num2 = parseInt(prompt("Enter the second number"))
-let num3 = parseInt(prompt("Enter the third number"))
-function combiner (x, y, z) {
-    let result = arguments[0] + arguments[1] + arguments[2];
-    console.log(`The sum of three numbers is ${result}`)
-    return result;
+let num1 = Number(prompt("Enter the first number"))
+let num2 = Number(prompt("Enter the second number"))
+let num3 = Number(prompt("Enter the third number"))
+function combiner (numbers) {
+    let sum = 0;
+    for(let i=0; i<arguments.length; i++){
+        sum += arguments[i];
+    }
+    console.log(`The sum of three numbers is ${sum}`)
+    return sum;
 }
+// function combiner (x, y, z) {
+//     let result = arguments[0] + arguments[1] + arguments[2];
+//     console.log(`The sum of three numbers is ${result}`)
+//     return result;
+// }
 
 combiner(num1, num2, num3)
 
